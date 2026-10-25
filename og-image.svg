@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9F1E0"/>
+      <stop offset="1" stop-color="#FAF9F6"/>
+    </linearGradient>
+    <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3E8C42"/>
+      <stop offset="1" stop-color="#2E7D32"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- солнце -->
+  <circle cx="985" cy="150" r="52" fill="#F2D06B"/>
+  <circle cx="985" cy="150" r="82" fill="#F2D06B" opacity=".18"/>
+
+  <!-- холмы -->
+  <path d="M0 420Q280 300 560 400T1200 360V630H0Z" fill="#CFE0C0"/>
+  <path d="M0 505Q340 380 640 470T1200 440V630H0Z" fill="#A5C795"/>
+  <path d="M0 580Q420 470 780 550T1200 540V630H0Z" fill="url(#hillFront)"/>
+
+  <!-- тропа -->
+  <path d="M590 630c-80-90 130-120 60-200S480 330 540 260c12-15 26-24 42-31" fill="none" stroke="#FBF7E8" stroke-width="13" stroke-linecap="round" stroke-dasharray="16 14"/>
+
+  <!-- указатель -->
+  <g transform="translate(582 225)">
+    <circle r="34" fill="#fff" opacity=".35"/>
+    <path d="M0 12c-15-17-22-29-22-41a22 22 0 1 1 44 0c0 12-7 24-22 41Z" fill="#2E7D32" stroke="#fff" stroke-width="4"/>
+    <circle cy="-29" r="8" fill="#fff"/>
+  </g>
+
+  <!-- бренд -->
+  <g transform="translate(90 118)">
+    <rect width="72" height="72" rx="20" fill="#2E7D32"/>
+    <path d="M20 58c0-13 16-13 16-27S26 14 31 12" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-dasharray="8 8" fill="none"/>
+    <path d="M46 60c-2-10 3-18 13-24-3 13-5 19-13 24Z" fill="#fff"/>
+    <text x="96" y="56" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="58" font-weight="800" fill="#1B5E20">Тропы</text>
+  </g>
+
+  <!-- заголовок -->
+  <text x="90" y="270" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="45" font-weight="700" fill="#212121">Проверенные пешие маршруты</text>
+  <text x="90" y="325" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="45" font-weight="700" fill="#212121">и экотропы рядом с домом</text>
+
+  <!-- подзаголовок -->
+  <text x="90" y="392" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="27" fill="#565B54">Карты PDF · координаты старта · описания достопримечательностей · отзывы</text>
+
+  <!-- плашка -->
+  <rect x="90" y="440" width="420" height="58" rx="29" fill="#2E7D32"/>
+  <circle cx="120" cy="469" r="7" fill="#fff" opacity=".9"/>
+  <text x="140" y="478" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="600" fill="#fff">Сезон открыт · маршруты проверены</text>
+</svg>
