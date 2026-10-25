@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2E7D32">
+  <meta name="description" content="Тропы — проверенные пешие маршруты и экотропы родного края. Карты PDF, описания достопримечательностей, отзывы. Идеально для прогулки выходного дня с детьми.">
+  <title>Тропы — маршруты и экотропы рядом с домом</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <meta name="application-name" content="Тропы">
+
+  <!-- Canonical и OpenGraph -->
+  <link rel="canonical" href="https://tropy.example/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Тропы — маршруты и экотропы рядом с домом">
+  <meta property="og:title" content="Тропы — проверенные пешие маршруты и экотропы рядом с домом">
+  <meta property="og:description" content="Карты PDF, координаты старта, описания достопримечательностей и отзывы. Идеально для прогулки выходного дня с детьми.">
+  <meta property="og:url" content="https://tropy.example/">
+  <meta property="og:image" content="https://tropy.example/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Тропы — пешие маршруты и экотропы рядом с домом">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Тропы — проверенные пешие маршруты и экотропы рядом с домом">
+  <meta name="twitter:description" content="Карты PDF, координаты старта и отзывы. Прогулка выходного дня с детьми.">
+  <meta name="twitter:image" content="https://tropy.example/og-image.svg">
+
+  
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Тропы — на главную">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 20c0-5 6-5 6-10S7 4 9 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+            <path d="M15 21c-1-4 1-7 5-9-1 5-2 7-5 9Z" fill="#fff"/>
+          </svg>
+        </span>
+        <span>Тропы<small>родного края</small></span>
+      </a>
+
+      <nav class="nav-panel" id="main-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a href="#about">О проекте</a></li>
+          <li><a href="#routes">Маршруты</a></li>
+          <li><a href="#how">Как это работает</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        <a class="btn btn-primary" href="#routes">Найти маршрут</a>
+      </nav>
+
+      <a class="btn btn-primary header-cta" href="#routes">Найти маршрут</a>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+        <span class="burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="hero-badge"><span class="status-dot" aria-hidden="true"></span> Сезон открыт · маршруты проверены</p>
+          <h1 id="hero-title">Откройте <em>тропы</em> рядом с&nbsp;домом</h1>
+          <p class="hero-sub">Пешие маршруты и экотропы для прогулки выходного дня. Без сложной подготовки и экстрима — просто вы, семья и природа.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#routes">
+              Смотреть маршруты
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-outline" href="#how">Как это работает</a>
+          </div>
+          <ul class="hero-trust">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Безопасные трассы
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+              Карты в PDF
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 21v-2a4 4 0 0 1 8 0v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Подойдут детям
+            </li>
+          </ul>
+        </div>
+
+        <figure class="hero-art">
+          <svg viewBox="0 0 520 440" role="img" aria-labelledby="hero-art-title" xmlns="http://www.w3.org/2000/svg">
+            <title id="hero-art-title">Иллюстрация: солнечная долина с лесом, извилистой тропой и указателем маршрута</title>
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#E7EFDC"/><stop offset="1" stop-color="#F6F3E4"/>
+              </linearGradient>
+              <linearGradient id="frontHill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#3E8C42"/><stop offset="1" stop-color="#2E7D32"/>
+              </linearGradient>
+            </defs>
+            <rect width="520" height="440" fill="url(#sky)"/>
+            <circle cx="392" cy="96" r="46" fill="#F2D06B" opacity=".9"/>
+            <circle cx="392" cy="96" r="62" fill="#F2D06B" opacity=".18"/>
+            <path d="M84 78c8-8 18-8 26 0m-26 0c-8-8-18-8-26 0" transform="translate(30 10)" stroke="#7C9276" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M0 210Q110 120 230 190T520 160V440H0Z" fill="#CFE0C0"/>
+            <path d="M0 268Q140 180 280 246T520 226V440H0Z" fill="#A5C795"/>
+            <path d="M0 330Q160 240 320 310T520 300V440H0Z" fill="url(#frontHill)"/>
+            <!-- хвойные деревья -->
+            <g fill="#256429">
+              <path d="M70 236l20 44H50l20-44Zm0-24 16 36H54l16-36Z"/><rect x="66" y="278" width="8" height="16" rx="2"/>
+              <path d="M118 252l17 38h-34l17-38Zm0-20 13 30h-26l13-30Z"/><rect x="114" y="288" width="8" height="14" rx="2"/>
+              <path d="M440 244l20 44h-40l20-44Zm0-24 16 36h-32l16-36Z"/><rect x="436" y="286" width="8" height="16" rx="2"/>
+            </g>
+            <!-- тропа -->
+            <path class="trail-dash" d="M268 440C230 392 350 372 320 330S210 300 246 264 330 236 318 208" fill="none" stroke="#FBF7E8" stroke-width="9" stroke-linecap="round"/>
+            <!-- указатель -->
+            <g transform="translate(318 208)">
+              <circle r="30" fill="#fff" opacity=".35"/>
+              <path d="M0 8C-14-8-20-18-20-28a20 20 0 1 1 40 0c0 10-6 20-20 36Z" fill="#2E7D32" stroke="#fff" stroke-width="3"/>
+              <circle cy="-28" r="7" fill="#fff"/>
+            </g>
+            <!-- путники -->
+            <g transform="translate(252 386)">
+              <circle cx="0" cy="-26" r="7" fill="#8D6E63"/>
+              <path d="M0-18v18m0-12-10 6m10-6 10 6m-10 6-7 12m7-12 7 12" stroke="#5D4037" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="24" cy="-18" r="5.5" fill="#B8860B"/>
+              <path d="M24-12v12m0-8-7 5m7-5 7 5m-7 3-5 9m5-9 5 9" stroke="#8D6E63" stroke-width="4" stroke-linecap="round"/>
+            </g>
+            <g fill="#F2D06B"><circle cx="96" cy="376" r="4"/><circle cx="120" cy="392" r="3"/><circle cx="408" cy="368" r="4"/><circle cx="430" cy="388" r="3"/></g>
+          </svg>
+          <figcaption class="hero-float">
+            <span class="emoji" aria-hidden="true">🌿</span>
+            <div>12 маршрутов<span>обновлены в октябре</span></div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= О ПРОЕКТЕ ================= -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="about-orb about-orb-1" aria-hidden="true"></div>
+      <div class="about-orb about-orb-2" aria-hidden="true"></div>
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="eyebrow">О проекте</p>
+            <h2 class="section-title" id="about-title">Мы&nbsp;за <span class="hl">безопасный</span> и&nbsp;<span class="hl">семейный</span> туризм</h2>
+            <p class="about-lead">«Тропы» — региональный проект для прогулок всей семьёй. Мы не зовём в экспедиции: мы ищем маршруты, по которым можно просто идти и радоваться — с детьми, с бабушкой и даже с собакой.</p>
+            <ul class="about-check">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Каждую тропу проходим сами — проверяем разметку, связь и&nbsp;безопасность бродов
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Честно оцениваем сложность — подскажем, по&nbsp;силам ли тропа детям и&nbsp;новичкам
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Памятка PDF всегда с&nbsp;вами — работает без интернета, даже в&nbsp;глухом лесу
+              </li>
+            </ul>
+            <dl class="about-stats">
+              <div><dt>12</dt><dd>проверенных маршрутов</dd></div>
+              <div><dt>47&nbsp;км</dt><dd>обустроенных троп</dd></div>
+              <div><dt>100%</dt><dd>пройдено нашими ногами</dd></div>
+            </dl>
+          </div>
+
+          <figure class="about-art reveal">
+            <svg class="about-scene" viewBox="0 0 560 480" role="img" aria-labelledby="about-art-title" xmlns="http://www.w3.org/2000/svg">
+              <title id="about-art-title">Ожившая зарисовка: семья стоит на деревянном мосту через реку и наблюдает за рыбками в воде и птицами в небе</title>
+              <defs>
+                <linearGradient id="about-sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#DDECDC"/><stop offset="1" stop-color="#F7F3E3"/>
+                </linearGradient>
+                <linearGradient id="about-river" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#A9CDD3"/><stop offset="1" stop-color="#8FB6BD"/>
+                </linearGradient>
+              </defs>
+
+              <!-- небо и солнце -->
+              <rect width="560" height="480" fill="url(#about-sky)"/>
+              <g transform="translate(452 72)">
+                <circle r="52" fill="#F2D06B" opacity=".16"/>
+                <g class="as-sun-rays">
+                  <g stroke="#F2D06B" stroke-width="5" stroke-linecap="round">
+                    <line x1="0" y1="-46" x2="0" y2="-58"/>
+                    <line x1="0" y1="46" x2="0" y2="58"/>
+                    <line x1="-46" y1="0" x2="-58" y2="0"/>
+                    <line x1="46" y1="0" x2="58" y2="0"/>
+                    <line x1="-33" y1="-33" x2="-41" y2="-41"/>
+                    <line x1="33" y1="-33" x2="41" y2="-41"/>
+                    <line x1="-33" y1="33" x2="-41" y2="41"/>
+                    <line x1="33" y1="33" x2="41" y2="41"/>
+                  </g>
+                </g>
+                <circle r="30" fill="#F2D06B"/>
+                <circle r="17" fill="#F7DF90" opacity=".6"/>
+              </g>
+
+              <!-- облака -->
+              <g class="as-cloud as-cloud-1"><g transform="translate(70 62)">
+                <ellipse cx="0" cy="0" rx="26" ry="11" fill="#fff" opacity=".9"/>
+                <ellipse cx="-19" cy="4" rx="15" ry="9" fill="#fff" opacity=".85"/>
+                <ellipse cx="18" cy="5" rx="16" ry="8" fill="#fff" opacity=".9"/>
+              </g></g>
+              <g class="as-cloud as-cloud-2"><g transform="translate(380 118)">
+                <ellipse cx="0" cy="0" rx="20" ry="9" fill="#fff" opacity=".75"/>
+                <ellipse cx="-12" cy="4" rx="11" ry="7" fill="#fff" opacity=".7"/>
+                <ellipse cx="14" cy="5" rx="12" ry="6" fill="#fff" opacity=".75"/>
+              </g></g>
+
+              <!-- птицы -->
+              <g class="as-bird as-bird-1"><g transform="translate(0 84)">
+                <circle r="2" fill="#4A5D46"/>
+                <path class="as-wing-l" d="M0 1C-10-8-22-10-30-5" stroke="#4A5D46" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path class="as-wing-r" d="M0 1C10-8 22-10 30-5" stroke="#4A5D46" stroke-width="3" fill="none" stroke-linecap="round"/>
+              </g></g>
+              <g class="as-bird as-bird-2"><g transform="translate(0 128)">
+                <circle r="1.8" fill="#3E5141"/>
+                <path class="as-wing-l" d="M0 1C-9-7-19-9-26-4" stroke="#3E5141" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+                <path class="as-wing-r" d="M0 1C9-7 19-9 26-4" stroke="#3E5141" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+              </g></g>
+
+              <!-- дальние холмы -->
+              <path d="M0 196Q120 124 250 188T560 168V300H0Z" fill="#CBE0BE"/>
+              <path d="M0 240Q170 168 320 232T560 218V310H0Z" fill="#A3C795"/>
+
+              <!-- долина: берега -->
+              <path d="M0 300C120 284 300 306 560 294V480H0Z" fill="#D9E7CB"/>
+              <path d="M0 380C180 356 380 372 560 366V480H0Z" fill="#C3DAB3"/>
+
+              <!-- лес по берегам -->
+              <g class="as-tree as-tree-1"><g transform="translate(64 280)">
+                <path d="M0-46l19 36h-9l20 34H-30l20-34h-9l19-36Z" fill="#2E7D32"/>
+                <rect x="-3.5" y="24" width="7" height="15" rx="2.5" fill="#6B4F37"/>
+              </g></g>
+              <g class="as-tree as-tree-2"><g transform="translate(118 312)">
+                <path d="M0-34l14 27h-7l15 26H-22l15-26h-7l14-27Z" fill="#3A8A3F"/>
+                <rect x="-2.5" y="19" width="5" height="11" rx="2" fill="#6B4F37"/>
+              </g></g>
+              <g class="as-tree as-tree-3"><g transform="translate(470 292)">
+                <path d="M0-36l15 28h-7l16 27H-24l16-27h-7l15-28Z" fill="#2E7D32"/>
+                <rect x="-3" y="19" width="6" height="11" rx="2" fill="#6B4F37"/>
+              </g></g>
+              <g class="as-tree as-tree-4"><g transform="translate(518 336)">
+                <path d="M0-30l13 25h-7l14 24H-20l14-24h-7l13-25Z" fill="#3A8A3F"/>
+                <rect x="-2.5" y="18" width="5" height="10" rx="2" fill="#6B4F37"/>
+              </g></g>
+              <g fill="#7FA375">
+                <path d="M176 176l10 19h-20l10-19Zm0-12 8 15h-16l8-15Z"/>
+                <path d="M232 188l10 19h-20l10-19Zm0-12 8 15h-16l8-15Z"/>
+                <path d="M458 180l9 17h-18l9-17Zm0-11 7 13h-14l7-13Z"/>
+              </g>
+
+              <!-- река, вьющаяся по центру долины -->
+              <path d="M238 212C226 248 258 274 244 314C232 348 268 376 256 414C247 444 262 470 258 480L362 480C372 452 349 430 360 404C370 372 336 348 352 316C364 278 338 250 348 212Z" fill="url(#about-river)"/>
+              <clippath id="about-river-clip">
+                <path d="M238 212C226 248 258 274 244 314C232 348 268 376 256 414C247 444 262 470 258 480L362 480C372 452 349 430 360 404C370 372 336 348 352 316C364 278 338 250 348 212Z"/>
+              </clippath>
+
+              <!-- течение и рыбки — только внутри реки (clip-path по её контуру) -->
+              <g clip-path="url(#about-river-clip)">
+                <g class="as-flow as-flow-1"><path d="M272 218c-6 74 6 150-2 224" stroke="#EAF4F5" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+                <g class="as-flow as-flow-2"><path d="M296 218c6 74-6 150 2 224" stroke="#E4F1F3" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+                <g class="as-flow as-flow-3"><path d="M322 218c-6 74 6 150-2 224" stroke="#EAF4F5" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+                <g class="as-flow as-flow-4"><path d="M286 218c-6 62 6 136-2 208" stroke="#DFEEF0" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+                <g class="as-flow as-flow-5"><path d="M340 218c6 62-6 136 2 208" stroke="#E4F1F3" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+                <g fill="#DDEFF1">
+                  <circle cx="252" cy="322" r="1.8"/><circle cx="310" cy="362" r="1.4"/><circle cx="336" cy="282" r="1.6"/><circle cx="272" cy="432" r="1.3"/>
+                </g>
+
+                <!-- рыбки плывут по течению (одна — вверх) -->
+                <g class="as-fish as-fish-1"><g transform="translate(268 218)"><g transform="rotate(90)">
+                  <path d="M0 0c-9-7-20-7-29 0 9 7 20 7 29 0Z" fill="#E8974F"/>
+                  <path d="M-29 0l-9-6.5v13l9-6.5Z" fill="#D9793F"/>
+                  <circle cx="-7" cy="-1.5" r="1.4" fill="#5D4037"/>
+                </g></g></g>
+                <g class="as-fish as-fish-2"><g transform="translate(300 218)"><g transform="rotate(90)">
+                  <path d="M0 0c-7-5.5-16-5.5-23 0 7 5.5 16 5.5 23 0Z" fill="#E8844E"/>
+                  <path d="M-23 0l-7-5v10l7-5Z" fill="#CE6F38"/>
+                  <circle cx="-5" cy="-1.2" r="1.1" fill="#5D4037"/>
+                </g></g></g>
+                <g class="as-fish as-fish-3"><g transform="translate(334 218)"><g transform="rotate(90)">
+                  <path d="M0 0c-8-6-18-6-26 0 8 6 18 6 26 0Z" fill="#C9A24B"/>
+                  <path d="M-26 0l-8-6v12l8-6Z" fill="#B08834"/>
+                  <circle cx="-6" cy="-1.4" r="1.2" fill="#5D4037"/>
+                </g></g></g>
+              </g>
+
+              <!-- мост через реку -->
+              <path d="M160 326C226 292 338 292 404 324" stroke="#8A6548" stroke-width="13" fill="none" stroke-linecap="round"/>
+              <path d="M160 326C226 292 338 292 404 324" stroke="#A97F5C" stroke-width="8" fill="none" stroke-linecap="round"/>
+              <path d="M164 305C226 271 338 271 400 303" stroke="#6B4F37" stroke-width="3.5" fill="none"/>
+              <g stroke="#6B4F37" stroke-width="3.5" stroke-linecap="round">
+                <line x1="200" y1="317" x2="200" y2="297"/>
+                <line x1="250" y1="303" x2="250" y2="283"/>
+                <line x1="300" y1="303" x2="300" y2="283"/>
+                <line x1="350" y1="316" x2="350" y2="296"/>
+              </g>
+
+              <!-- семья на мосту: папа показывает на рыбок, мама — на птиц -->
+              <g class="as-family"><g transform="translate(226 296)">
+                <circle cx="0" cy="-30" r="7.5" fill="#8D6E63"/>
+                <path d="M-2-16q-9 2-9 11v3" stroke="#1B5E20" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+                <path d="M0-23v19m0-12-10 7m10-7 10 7m-10 7-7 11m7-11 7 11" stroke="#2E7D32" stroke-width="5" stroke-linecap="round"/>
+                <path d="M8-13q18 0 22 11" stroke="#1B5E20" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+                <circle cx="30" cy="-12" r="5" fill="#8D6E63"/>
+                <path d="M30-7v12m-2-8-6 4m8-4 6 4m-8 3 3 6m4-6-3 6" stroke="#B8860B" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="56" cy="-25" r="6.5" fill="#C48E63"/>
+                <path d="M50-32q7-6 13 0" stroke="#5D4037" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M56-19v14m0-9-8 5m8-5 8 5m-8 4-5 9m5-9 5 9" stroke="#8D6E63" stroke-width="4.5" stroke-linecap="round"/>
+                <path d="M56-14l-9-9" stroke="#8D6E63" stroke-width="4.5" stroke-linecap="round"/>
+              </g></g>
+
+              <!-- падающие листья -->
+              <g class="as-leaf as-leaf-1"><ellipse cx="150" cy="200" rx="5" ry="3" fill="#D9B64C" transform="rotate(24 150 200)"/></g>
+              <g class="as-leaf as-leaf-2"><ellipse cx="252" cy="180" rx="4.5" ry="2.8" fill="#C89A3E" transform="rotate(-18 252 180)"/></g>
+              <g class="as-leaf as-leaf-3"><ellipse cx="332" cy="214" rx="4" ry="2.5" fill="#B9C959" transform="rotate(40 332 214)"/></g>
+
+              <!-- камыш, трава и цветы на берегах -->
+              <g stroke="#7FA375" stroke-width="2.5" stroke-linecap="round">
+                <path d="M44 480q4-16 9-32"/>
+                <path d="M56 482q3-14 7-27"/>
+                <path d="M66 480q5-19 10-36"/>
+                <path d="M496 480q4-16 9-30"/>
+                <path d="M510 482q3-14 7-25"/>
+              </g>
+              <ellipse cx="52" cy="448" rx="2.6" ry="8" fill="#6F5138"/>
+              <ellipse cx="62" cy="444" rx="2.4" ry="7" fill="#6F5138"/>
+              <ellipse cx="506" cy="450" rx="2.5" ry="7.5" fill="#6F5138"/>
+              <path d="M120 480q4-13 8 0M196 478q4-11 8 0M440 480q4-12 8 0M536 470q3-10 7-14" stroke="#6FA36A" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <g fill="#F2D06B"><circle cx="18" cy="470" r="3.5"/><circle cx="146" cy="474" r="3"/><circle cx="478" cy="472" r="3.5"/><circle cx="534" cy="468" r="2.8"/></g>
+              <g fill="#DEB06A"><circle cx="40" cy="466" r="2.5"/><circle cx="498" cy="462" r="2.5"/><circle cx="180" cy="478" r="3"/></g>
+            </svg>
+            <figcaption class="about-float">
+              <span class="emoji" aria-hidden="true">🌿</span>
+              <div>Вид с&nbsp;моста<span class="dim">рыбки плывут, птицы летят</span></div>
+            </figcaption>
+          </figure>
+        </div>
+
+        <ul class="about-cards">
+          <li class="about-card reveal">
+            <div class="about-card-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m8.6 12 2.3 2.3 4.4-4.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h3>Безопасность прежде всего</h3><p>Разметка, честные предупреждения о сложных участках и проверенные броды — никаких сюрпризов под ногами.</p></div>
+          </li>
+          <li class="about-card reveal">
+            <div class="about-card-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="16.5" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M2.5 20v-2a5.5 5.5 0 0 1 11 0v2m0-3a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h3>Проверено для всей семьи</h3><p>Сложность оцениваем с поправкой на возраст и опыт: проходимость с коляской, привалы, туалеты и эко-игры по пути.</p></div>
+          </li>
+          <li class="about-card reveal">
+            <div class="about-card-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 2h8l5 5v15H6V2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v5h5M9.5 12.5h5M9.5 16h3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h3>Памятка в PDF</h3><p>Карта, координаты старта и советы — в одном файле. Сохраните в телефон: работает без сети.</p></div>
+          </li>
+          <li class="about-card reveal">
+            <div class="about-card-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21c-5 0-8-3-8-8 0-6 8-10 8-10s8 4 8 10c0 5-3 8-8 8Z" stroke="currentColor" stroke-width="2"/><path d="m9 13.5 2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h3>Бережно к природе</h3><p>Тропы идут по существующим дорожкам. Одно правило: ничего не оставляем, кроме следов.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= МАРШРУТЫ ================= -->
+    <section class="section" id="routes" aria-labelledby="routes-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Популярные маршруты</p>
+          <h2 class="section-title" id="routes-title">Куда отправимся в выходные?</h2>
+          <p>Мы прошли эти тропы сами: проверили навигацию, отметили смотровые площадки и места для привала. Выбирайте сложность — а карту возьмёте с собой в PDF.</p>
+        </div>
+
+        <div class="routes-head reveal">
+          <div class="filters" role="group" aria-label="Фильтр маршрутов по сложности">
+            <button class="filter-btn" data-filter="all" aria-pressed="true">Все маршруты</button>
+            <button class="filter-btn" data-filter="easy" aria-pressed="false">Лёгкий</button>
+            <button class="filter-btn" data-filter="medium" aria-pressed="false">Средний</button>
+            <button class="filter-btn" data-filter="hard" aria-pressed="false">Сложный</button>
+          </div>
+          <p class="muted" style="font-size:.875rem" id="routes-count" role="status" aria-live="polite">Показано 6 маршрутов</p>
+        </div>
+
+        <div class="routes-grid" id="routes-grid">
+          <!-- Карточка 1 -->
+          <article class="route-card reveal" data-level="easy" data-id="forest" data-name="Лесное кольцо" data-distance="3,2 км" data-time="1 ч 15 мин" data-level-name="Лёгкий" data-coords="56.8421, 60.5987">
+            <div class="route-art" aria-hidden="true">
+              <img src="1%20лесное%20кольцо.jpg" alt="" loading="lazy" decoding="async">
+              <span class="art-tag">🌲 Лес</span>
+            </div>
+            <div class="route-body">
+              <div class="route-top"><span class="badge badge-easy">Лёгкий</span><span class="route-kids">👨‍👩‍ С детьми</span></div>
+              <h3>Лесное кольцо</h3>
+              <ul class="route-meta">
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18 18 4M4 4v4m0-4h4m12 16h-4m4 0v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>3,2 км</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>1 ч 15 мин</li>
+              </ul>
+              <p class="route-desc">Круговая тропа сквозь вековые ели. Ровная тропа, две беседки и грибочки под осенним навесом.</p>
+              <div class="route-footer">
+                <button class="route-more" type="button">Подробнее <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button class="icon-btn" type="button" data-download aria-label="Скачать карту маршрута «Лесное кольцо» в PDF">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 2 -->
+          <article class="route-card reveal" data-level="easy" data-id="river" data-name="Берег Тихой реки" data-distance="4,5 км" data-time="1 ч 30 мин" data-level-name="Лёгкий" data-coords="56.8104, 60.6240">
+            <div class="route-art" aria-hidden="true">
+              <img src="2%20берег%20тихой%20реки.jpg" alt="" loading="lazy" decoding="async">
+              <span class="art-tag">💧 Вдоль воды</span>
+            </div>
+            <div class="route-body">
+              <div class="route-top"><span class="badge badge-easy">Лёгкий</span><span class="route-kids">🦆 Наблюдение за птицами</span></div>
+              <h3>Берег Тихой реки</h3>
+              <ul class="route-meta">
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18 18 4M4 4v4m0-4h4m12 16h-4m4 0v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>4,5 км</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>1 ч 30 мин</li>
+              </ul>
+              <p class="route-desc">Прогулка по речной террасе с видовыми лавочками. Мостки, утиные семейки и лучший закат в краю.</p>
+              <div class="route-footer">
+                <button class="route-more" type="button">Подробнее <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button class="icon-btn" type="button" data-download aria-label="Скачать карту маршрута «Берег Тихой реки» в PDF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 3 -->
+          <article class="route-card reveal" data-level="medium" data-id="hills" data-name="Холмы над долиной" data-distance="6,8 км" data-time="2 ч 30 мин" data-level-name="Средний" data-coords="56.8790, 60.5512">
+            <div class="route-art" aria-hidden="true">
+              <img src="3%20холмы%20над%20долиной.jpg" alt="" loading="lazy" decoding="async">
+              <span class="art-tag">⛰ Смотровая</span>
+            </div>
+            <div class="route-body">
+              <div class="route-top"><span class="badge badge-medium">Средний</span><span class="route-kids">📸 Панорамы</span></div>
+              <h3>Холмы над долиной</h3>
+              <ul class="route-meta">
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18 18 4M4 4v4m0-4h4m12 16h-4m4 0v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>6,8 км</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>2 ч 30 мин</li>
+              </ul>
+              <p class="route-desc">Мягкие подъёмы, открытые холмы и панорама долины на 360°. Возьмите термос — на вершине есть скамья.</p>
+              <div class="route-footer">
+                <button class="route-more" type="button">Подробнее <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button class="icon-btn" type="button" data-download aria-label="Скачать карту маршрута «Холмы над долиной» в PDF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 4 -->
+          <article class="route-card reveal" data-level="medium" data-id="lake" data-name="Озёрная тропа" data-distance="8,4 км" data-time="3 ч" data-level-name="Средний" data-coords="56.7955, 60.7103">
+            <div class="route-art" aria-hidden="true">
+              <img src="4%20озерная%20тропа.jpg" alt="" loading="lazy" decoding="async">
+              <span class="art-tag">🛶 Большое озеро</span>
+            </div>
+            <div class="route-body">
+              <div class="route-top"><span class="badge badge-medium">Средний</span><span class="route-kids">🎣 Тихие пляжи</span></div>
+              <h3>Озёрная тропа</h3>
+              <ul class="route-meta">
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18 18 4M4 4v4m0-4h4m12 16h-4m4 0v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>8,4 км</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>3 ч</li>
+              </ul>
+              <p class="route-desc">Круг вокруг лесного озера: песчаные заходы в воду, валуны и место для долгого привала.</p>
+              <div class="route-footer">
+                <button class="route-more" type="button">Подробнее <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button class="icon-btn" type="button" data-download aria-label="Скачать карту маршрута «Озёрная тропа» в PDF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 5 -->
+          <article class="route-card reveal" data-level="hard" data-id="falls" data-name="К водопаду Каменному" data-distance="11,2 км" data-time="4 ч 30 мин" data-level-name="Сложный" data-coords="56.9218, 60.4876">
+            <div class="route-art" aria-hidden="true">
+              <img src="5%20к%20водопаду%20каменному.jpg" alt="" loading="lazy" decoding="async">
+              <span class="art-tag">🥾 Для опытных</span>
+            </div>
+            <div class="route-body">
+              <div class="route-top"><span class="badge badge-hard">Сложный</span><span class="route-kids">🎒 Нужна подготовка</span></div>
+              <h3>К водопаду Каменному</h3>
+              <ul class="route-meta">
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18 18 4M4 4v4m0-4h4m12 16h-4m4 0v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>11,2 км</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>4 ч 30 мин</li>
+              </ul>
+              <p class="route-desc">Каменные ступени, корни и шум воды в финале. Только в сухую погоду, с хорошей обувью.</p>
+              <div class="route-footer">
+                <button class="route-more" type="button">Подробнее <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button class="icon-btn" type="button" data-download aria-label="Скачать карту маршрута «К водопаду Каменному» в PDF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 6 -->
+          <article class="route-card reveal" data-level="easy" data-id="meadow" data-name="Семейная поляна" data-distance="2,1 км" data-time="45 мин" data-level-name="Лёгкий" data-coords="56.8330, 60.6601">
+            <div class="route-art" aria-hidden="true">
+              <img src="6%20семейная%20поляна.jpg" alt="" loading="lazy" decoding="async">
+              <span class="art-tag">👶 Первый поход</span>
+            </div>
+            <div class="route-body">
+              <div class="route-top"><span class="badge badge-easy">Лёгкий</span><span class="route-kids">🧺 Пикник у пруда</span></div>
+              <h3>Семейная поляна</h3>
+              <ul class="route-meta">
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18 18 4M4 4v4m0-4h4m12 16h-4m4 0v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>2,1 км</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>45 мин</li>
+              </ul>
+              <p class="route-desc">Короткая петля с эко-играми для детей. Проходима с коляской, на поляне — столы и туалеты.</p>
+              <div class="route-footer">
+                <button class="route-more" type="button">Подробнее <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <button class="icon-btn" type="button" data-download aria-label="Скачать карту маршрута «Семейная поляна» в PDF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="routes-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 11v5m0-8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Время указано в спокойном темпе с остановками. Перед выходом проверяйте погоду: памятку в PDF сохраните в телефон — в лесу она работает без интернета.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= КАК ЭТО РАБОТАЕТ ================= -->
+    <section class="section how" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Проще, чем кажется</p>
+          <h2 class="section-title" id="how-title">Как это работает</h2>
+          <p>От идеи до первых шагов по лесу — четыре простых действия. Регистрация не нужна.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <div class="step-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3>Выберите маршрут</h3>
+            <p>Смотрите на длину и время. Для первого раза берите «Лёгкий» — до 5 км по ровной тропе.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M7 12h10m-7 6h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="6" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/></svg></div>
+            <h3>Оцените сложность</h3>
+            <p>В карточке — подъёмы, покрытие, места для привала и советы, с какого возраста идти.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Скачайте карту PDF</h3>
+            <p>Схема, координаты старта и точки интереса. Распечатайте или сохраните в телефон.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 20V9l4-5 3 5 5 2v9M6 14h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3>Отправляйтесь в путь</h3>
+            <p>Вода, перекус, удобная обувь — и вперёд. Вернувшись, оставьте отзыв для других.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= ПОЧЕМУ МЫ ================= -->
+    <section class="section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Почему мы</p>
+          <h2 class="section-title" id="why-title">Природа ближе, чем вы думаете</h2>
+          <p>«Тропы» — проект краеведов и инструкторов. Мы собираем только те маршруты, по которым не страшно вести близких.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit reveal">
+            <div class="benefit-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h3>Проверено на себе</h3><p>Каждую тропу проходим пешком, обновляем схему после паводков и падений деревьев.</p></div>
+          </article>
+          <article class="benefit reveal">
+            <div class="benefit-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg></div>
+            <div><h3>Без интернета</h3><p>PDF-карта и координаты старта всегда под рукой — даже в глухом лесу без связи.</p></div>
+          </article>
+          <article class="benefit reveal">
+            <div class="benefit-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M2 20v-2a6 6 0 0 1 12 0v2m1-4a4 4 0 0 1 7 3v1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h3>Для всей семьи</h3><p>Отмечаем маршруты с коляской, детские квесты и места, где можно безопасно искупаться.</p></div>
+          </article>
+          <article class="benefit reveal">
+            <div class="benefit-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21c-5 0-8-3-8-8 0-6 8-10 8-10s8 4 8 10c0 5-3 8-8 8Z" stroke="currentColor" stroke-width="2"/><path d="M12 21V9m0 4 4-3m-4 6-4-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h3>Бережно к природе</h3><p>Тропы проходят по существующим дорожкам. Учим правило «ничего не оставлять, кроме следов».</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ОТЗЫВЫ ================= -->
+    <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Отзывы</p>
+          <h2 class="section-title" id="reviews-title">Уже прошли — и рекомендуют</h2>
+          <p>Настоящие истории наших прогулочных выходных. А какой маршрут расскажет вашу?</p>
+        </div>
+        <div class="reviews-grid">
+          <article class="review reveal">
+            <p class="stars" role="img" aria-label="Оценка: 5 из 5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+            </p>
+            <blockquote>«Шли “Семейную поляну” с сыном и собакой. За 45 минут увидели белку, нашли десять видов листьев и успели на пикник. Карта распечатанная очень помогла — связи там нет».</blockquote>
+            <div class="review-person">
+              <span class="avatar" aria-hidden="true">АМ</span>
+              <div><strong>Анна М.</strong><span>Мама двоих детей · сентябрь</span></div>
+            </div>
+          </article>
+
+          <article class="review reveal">
+            <p class="stars" role="img" aria-label="Оценка: 5 из 5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+            </p>
+            <blockquote>«Я новичок, боялся уйти не туда. На “Холмах” разметка через каждые 100 метров, а на смотровой — целая долина как на ладони. Теперь каждую субботу где-то в новом месте».</blockquote>
+            <div class="review-person">
+              <span class="avatar b" aria-hidden="true">ДК</span>
+              <div><strong>Дмитрий К.</strong><span>Начинающий турист · октябрь</span></div>
+            </div>
+          </article>
+
+          <article class="review reveal">
+            <p class="stars" role="img" aria-label="Оценка: 4 из 5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+              <svg class="off" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2l-5-4.8 7-.9L12 2Z"/></svg>
+            </p>
+            <blockquote>«Озёрная тропа — любовь. После дождя были лужи, заложили плюс 20 минут, как и предупреждали в описании. Спасибо, что пишете честно, а не только про красивое».</blockquote>
+            <div class="review-person">
+              <span class="avatar c" aria-hidden="true">ЕС</span>
+              <div><strong>Елена и Сергей</strong><span>Проходят по выходным · сентябрь</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <div class="cta-wrap">
+      <div class="container">
+        <section class="cta reveal" aria-labelledby="cta-title">
+          <svg class="cta-decor" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path d="M-50 260Q200 120 450 220T950 180T1300 240" fill="none" stroke="#fff" stroke-width="40"/>
+            <path d="M-50 320Q250 180 550 280T1250 260" fill="none" stroke="#fff" stroke-width="24"/>
+            <circle cx="1050" cy="60" r="70" fill="#fff"/>
+          </svg>
+          <div>
+            <h2 id="cta-title">Готовы к прогулке?</h2>
+            <p>Ближайшая экотропа — в получасе от города. Выберите маршрут сегодня, а историю выходного дня расскажете в понедельник.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-light" href="#routes">
+              Найти свой маршрут
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= ФУТЕР ================= -->
+  <footer class="site-footer" id="contacts">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="#top" aria-label="Тропы — на главную">
+            <span class="logo-mark" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 20c0-5 6-5 6-10S7 4 9 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/><path d="M15 21c-1-4 1-7 5-9-1 5-2 7-5 9Z" fill="#fff"/></svg>
+            </span>
+            <span>Тропы<small>родного края</small></span>
+          </a>
+          <p>Региональный агрегатор пеших маршрутов и экотроп. Прогулки, которые сближают с природой и друг с другом.</p>
+          <div class="socials">
+            <a href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Наш канал в Telegram (откроется в новом окне)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 4 3 11l6 2 2 6 3-4 5 4 2-15Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 13 8-6" stroke="currentColor" stroke-width="1.8"/></svg>
+            </a>
+            <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="Наше сообщество ВКонтакте (откроется в новом окне)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8c1 6 4.5 9 9 9h2v-3c2 0 3 1 4 3h3c-1-3-3-5-4-5 1-1 2-3 3-5h-3c-1 2-2 4-4 5V7h-3v6c-2-1-3-3-3-6H3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Разделы сайта">
+          <h3>Разделы</h3>
+          <ul>
+            <li><a href="#about">О проекте</a></li>
+            <li><a href="#routes">Маршруты</a></li>
+            <li><a href="#how">Как это работает</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h3>Контакты</h3>
+          <address>
+            <ul>
+              <li><a href="mailto:hello@tropy.example">hello@tropy.example</a></li>
+              <li><a href="tel:+73430000000">+7 (343) 000-00-00</a></li>
+              <li>Екатеринбург, ул. Лесная, 12<br>пн–пт, 10:00–18:00</li>
+            </ul>
+          </address>
+        </div>
+
+        <div class="footer-col">
+          <h3>Безопасность</h3>
+          <ul>
+            <li>Сообщите близким о маршруте</li>
+            <li>Берите воду и заряженный телефон</li>
+            <li>Не сходите с размеченной тропы</li>
+            <li>При ЧС звоните <a href="tel:112">112</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 «Тропы». Берегите лес — он ваш сосед.</p>
+        <p>Сделано с любовью к родному краю 🌿</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= МОДАЛЬНОЕ ОКНО МАРШРУТА ================= -->
+  <dialog id="route-dialog" aria-labelledby="modal-title">
+    <div class="modal-cover" id="modal-cover">
+      <img id="modal-cover-img" src="1%20лесное%20кольцо.jpg" alt="" aria-hidden="true">
+      <button class="modal-close" type="button" id="modal-close" aria-label="Закрыть описание маршрута">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-badges">
+        <span class="badge badge-easy" id="modal-badge">Лёгкий</span>
+        <span class="route-kids" id="modal-tag"></span>
+      </div>
+      <h2 id="modal-title">Название маршрута</h2>
+      <p id="modal-desc"></p>
+      <ul class="modal-facts">
+        <li><strong>Длина</strong><span id="modal-distance"></span></li>
+        <li><strong>В пути</strong><span id="modal-time"></span></li>
+        <li><strong>Старт (широта, долгота)</strong><span class="coords" id="modal-coords"></span></li>
+        <li><strong>Покрытие</strong><span id="modal-surface"></span></li>
+      </ul>
+      <h3>Что увидите по пути</h3>
+      <ul class="landmarks" id="modal-landmarks"></ul>
+      <div class="modal-actions">
+        <button class="btn btn-primary" type="button" id="modal-download">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Скачать карту (PDF)
+        </button>
+        <button class="btn btn-outline" type="button" id="modal-cancel">Закрыть</button>
+      </div>
+      <p class="modal-hint">PDF — схема маршрута с точками интереса. Не заменяет навигатор: перед выходом сверьте координаты и прогноз погоды.</p>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- jsPDF: генерация PDF-памяток (кириллический шрифт подключается динамически) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
