@@ -243,6 +243,137 @@
     @keyframes trailMove { to { stroke-dashoffset: -190; } }
 
     /* ==========================================================
+       О ПРОЕКТЕ: текст + живая SVG-зарисовка + ценности
+       ========================================================== */
+    .about {
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse 55% 45% at 90% 10%, rgba(242, 208, 107, .18), transparent 70%),
+        linear-gradient(180deg, #EEF3E7 0%, var(--cream) 72%);
+    }
+    .about-orb {
+      position: absolute; border-radius: 50%; filter: blur(72px);
+      pointer-events: none; z-index: 0;
+    }
+    .about-orb-1 { width: 340px; height: 340px; left: -130px; top: 6%; background: rgba(165, 199, 149, .40); animation: orbDrift 16s ease-in-out infinite; }
+    .about-orb-2 { width: 300px; height: 300px; right: -110px; bottom: 3%; background: rgba(242, 208, 107, .24); animation: orbDrift 20s ease-in-out infinite reverse; }
+    @keyframes orbDrift { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(28px, -22px, 0) scale(1.07); } }
+
+    .about-grid { position: relative; z-index: 1; display: grid; gap: clamp(2rem, 5vw, 3.25rem); align-items: center; }
+    .about-text .hl { color: var(--green); }
+    .about-lead { margin-top: 1.125rem; color: var(--muted); font-size: 1.0625rem; max-width: 34rem; }
+    .about-check { display: grid; gap: .875rem; margin-top: 1.5rem; }
+    .about-check li { display: flex; gap: .75rem; align-items: flex-start; font-weight: 600; font-size: .9375rem; line-height: 1.5; }
+    .about-check svg { flex: none; color: var(--green); margin-top: 4px; }
+
+    .about-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.875rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+    .about-stats div + div { padding-left: 1rem; border-left: 1px solid var(--line); }
+    .about-stats dt { font-size: clamp(1.5rem, 3.2vw, 2rem); font-weight: 800; letter-spacing: -.03em; color: var(--green-dark); line-height: 1.1; font-variant-numeric: tabular-nums; }
+    .about-stats dd { margin: .3rem 0 0; font-size: .75rem; color: var(--muted); line-height: 1.4; }
+
+    .about-art { position: relative; max-width: 560px; width: 100%; margin-inline: auto; }
+    .about-scene { width: 100%; height: auto; display: block; border-radius: 24px; box-shadow: var(--shadow-md); background: #EDF4E9; }
+    .about-float {
+      position: absolute; right: 14px; bottom: 18px; z-index: 2;
+      background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-md);
+      padding: .7rem 1rem; display: flex; align-items: center; gap: .6rem;
+      animation: floaty 6s ease-in-out infinite;
+    }
+    .about-float .emoji { font-size: 1.4rem; }
+    .about-float div { font-size: .8125rem; font-weight: 700; line-height: 1.35; }
+    .about-float .dim { display: block; font-size: .6875rem; font-weight: 500; color: var(--muted); }
+
+    .about-cards { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+    .about-card {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.5rem; box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .about-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: #CBD9C6; }
+    .about-card-icon {
+      flex: none; width: 50px; height: 50px; border-radius: 14px;
+      background: var(--green-soft); color: var(--green-dark);
+      display: grid; place-items: center;
+    }
+    .about-card:nth-child(2n) .about-card-icon { background: var(--brown-soft); color: var(--brown-dark); }
+    .about-card h3 { font-size: 1.0625rem; font-weight: 750; margin-bottom: .375rem; letter-spacing: -.01em; }
+    .about-card p { font-size: .90625rem; color: var(--muted); }
+
+    /* ---- анимации SVG-сцены ---- */
+    .as-cloud { animation: cloudDrift linear infinite; }
+    .as-cloud-1 { animation-duration: 34s; }
+    .as-cloud-2 { animation-duration: 46s; animation-delay: -14s; }
+    @keyframes cloudDrift { from { transform: translateX(-170px); } to { transform: translateX(730px); } }
+
+    .as-bird { animation: birdFly linear infinite; }
+    .as-bird-1 { animation-duration: 16s; animation-delay: -5s; }
+    .as-bird-2 { animation-duration: 23s; animation-delay: -16s; }
+    @keyframes birdFly {
+      0%   { transform: translate(-80px, 8px); }
+      45%  { transform: translate(330px, -12px); }
+      100% { transform: translate(730px, 4px); }
+    }
+    .as-bird .as-wing-l, .as-bird .as-wing-r { transform-box: fill-box; animation: flap .5s ease-in-out infinite alternate; }
+    .as-bird .as-wing-l { transform-origin: 100% 100%; animation-name: flap-l; }
+    .as-bird .as-wing-r { transform-origin: 0% 100%; animation-name: flap-r; }
+    @keyframes flap-l { from { transform: rotate(16deg); } to { transform: rotate(-20deg); } }
+    @keyframes flap-r { from { transform: rotate(-16deg); } to { transform: rotate(20deg); } }
+
+    .as-sun-rays { transform-box: fill-box; transform-origin: center; animation: spin 42s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .as-tree { transform-box: fill-box; transform-origin: 50% 100%; animation: sway 6s ease-in-out infinite; }
+    .as-tree-2 { animation-delay: -2s; }
+    .as-tree-3 { animation-delay: -4s; }
+    .as-tree-4 { animation-delay: -1s; }
+    @keyframes sway { 0%, 100% { transform: rotate(-1.3deg); } 50% { transform: rotate(1.5deg); } }
+
+    /* река течёт вниз по долине */
+    .as-flow { animation: flowMove linear infinite; }
+    .as-flow-1 { animation-duration: 8s; }
+    .as-flow-2 { animation-duration: 10.5s; animation-delay: -3.5s; }
+    .as-flow-3 { animation-duration: 12.5s; animation-delay: -7s; }
+    .as-flow-4 { animation-duration: 7.5s; animation-delay: -2s; }
+    .as-flow-5 { animation-duration: 11s; animation-delay: -5.5s; }
+    @keyframes flowMove { from { transform: translateY(-40px); } to { transform: translateY(300px); } }
+
+    /* рыбки плывут по реке (вниз по течению, одна — вверх) */
+    .as-fish { animation: fishSwim linear infinite; }
+    .as-fish-1 { animation-duration: 14s; animation-delay: -4s; }
+    .as-fish-2 { animation-duration: 18s; animation-delay: -11s; }
+    .as-fish-3 { animation-duration: 22s; animation-delay: -6s; animation-direction: reverse; }
+    @keyframes fishSwim {
+      0%   { transform: translateY(-40px); }
+      45%  { transform: translateY(140px) translateX(8px); }
+      100% { transform: translateY(300px); }
+    }
+
+    /* семья стоит на мосту, спокойно наблюдая */
+    .as-family { animation: watch 4.5s ease-in-out infinite; }
+    @keyframes watch { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.5px); } }
+
+    .as-leaf { animation: leafFall linear infinite; }
+    .as-leaf-1 { animation-duration: 8.5s; animation-delay: -2.5s; }
+    .as-leaf-2 { animation-duration: 10.5s; animation-delay: -7s; }
+    .as-leaf-3 { animation-duration: 9.5s; animation-delay: -4.5s; }
+    @keyframes leafFall {
+      0%   { transform: translate(0, -12px) rotate(0deg); opacity: 0; }
+      12%  { opacity: .9; }
+      85%  { opacity: .85; }
+      100% { transform: translate(-16px, 160px) rotate(330deg); opacity: 0; }
+    }
+
+    @media (min-width: 768px) {
+      .about-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr 1.02fr; }
+      .about-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .about-card { flex-direction: column; gap: .875rem; }
+    }
+
+    /* ==========================================================
        МАРШРУТЫ: фильтры сложности + сетка карточек
        ========================================================== */
     .routes-head { display: grid; gap: 1.5rem; align-items: end; }
@@ -614,11 +745,237 @@
       </div>
     </section>
 
-    <!-- ================= О ПРОЕКТЕ / МАРШРУТЫ ================= -->
-    <section class="section" id="about" aria-labelledby="routes-title">
+    <!-- ================= О ПРОЕКТЕ ================= -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="about-orb about-orb-1" aria-hidden="true"></div>
+      <div class="about-orb about-orb-2" aria-hidden="true"></div>
       <div class="container">
-        <div class="section-head reveal" id="routes">
-          <p class="eyebrow">О проекте · Популярные маршруты</p>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="eyebrow">О проекте</p>
+            <h2 class="section-title" id="about-title">Мы&nbsp;за <span class="hl">безопасный</span> и&nbsp;<span class="hl">семейный</span> туризм</h2>
+            <p class="about-lead">«Тропы» — региональный проект для прогулок всей семьёй. Мы не зовём в экспедиции: мы ищем маршруты, по которым можно просто идти и радоваться — с детьми, с бабушкой и даже с собакой.</p>
+            <ul class="about-check">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Каждую тропу проходим сами — проверяем разметку, связь и&nbsp;безопасность бродов
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Честно оцениваем сложность — подскажем, по&nbsp;силам ли тропа детям и&nbsp;новичкам
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Памятка PDF всегда с&nbsp;вами — работает без интернета, даже в&nbsp;глухом лесу
+              </li>
+            </ul>
+            <dl class="about-stats">
+              <div><dt>12</dt><dd>проверенных маршрутов</dd></div>
+              <div><dt>47&nbsp;км</dt><dd>обустроенных троп</dd></div>
+              <div><dt>100%</dt><dd>пройдено нашими ногами</dd></div>
+            </dl>
+          </div>
+
+          <figure class="about-art reveal">
+            <svg class="about-scene" viewBox="0 0 560 480" role="img" aria-labelledby="about-art-title" xmlns="http://www.w3.org/2000/svg">
+              <title id="about-art-title">Ожившая зарисовка: семья стоит на деревянном мосту через реку и наблюдает за рыбками в воде и птицами в небе</title>
+              <defs>
+                <linearGradient id="about-sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#DDECDC"/><stop offset="1" stop-color="#F7F3E3"/>
+                </linearGradient>
+                <linearGradient id="about-river" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#A9CDD3"/><stop offset="1" stop-color="#8FB6BD"/>
+                </linearGradient>
+              </defs>
+
+              <!-- небо и солнце -->
+              <rect width="560" height="480" fill="url(#about-sky)"/>
+              <g transform="translate(452 72)">
+                <circle r="52" fill="#F2D06B" opacity=".16"/>
+                <g class="as-sun-rays">
+                  <g stroke="#F2D06B" stroke-width="5" stroke-linecap="round">
+                    <line x1="0" y1="-46" x2="0" y2="-58"/>
+                    <line x1="0" y1="46" x2="0" y2="58"/>
+                    <line x1="-46" y1="0" x2="-58" y2="0"/>
+                    <line x1="46" y1="0" x2="58" y2="0"/>
+                    <line x1="-33" y1="-33" x2="-41" y2="-41"/>
+                    <line x1="33" y1="-33" x2="41" y2="-41"/>
+                    <line x1="-33" y1="33" x2="-41" y2="41"/>
+                    <line x1="33" y1="33" x2="41" y2="41"/>
+                  </g>
+                </g>
+                <circle r="30" fill="#F2D06B"/>
+                <circle r="17" fill="#F7DF90" opacity=".6"/>
+              </g>
+
+              <!-- облака -->
+              <g class="as-cloud as-cloud-1"><g transform="translate(70 62)">
+                <ellipse cx="0" cy="0" rx="26" ry="11" fill="#fff" opacity=".9"/>
+                <ellipse cx="-19" cy="4" rx="15" ry="9" fill="#fff" opacity=".85"/>
+                <ellipse cx="18" cy="5" rx="16" ry="8" fill="#fff" opacity=".9"/>
+              </g></g>
+              <g class="as-cloud as-cloud-2"><g transform="translate(380 118)">
+                <ellipse cx="0" cy="0" rx="20" ry="9" fill="#fff" opacity=".75"/>
+                <ellipse cx="-12" cy="4" rx="11" ry="7" fill="#fff" opacity=".7"/>
+                <ellipse cx="14" cy="5" rx="12" ry="6" fill="#fff" opacity=".75"/>
+              </g></g>
+
+              <!-- птицы -->
+              <g class="as-bird as-bird-1"><g transform="translate(0 84)">
+                <circle r="2" fill="#4A5D46"/>
+                <path class="as-wing-l" d="M0 1C-10-8-22-10-30-5" stroke="#4A5D46" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path class="as-wing-r" d="M0 1C10-8 22-10 30-5" stroke="#4A5D46" stroke-width="3" fill="none" stroke-linecap="round"/>
+              </g></g>
+              <g class="as-bird as-bird-2"><g transform="translate(0 128)">
+                <circle r="1.8" fill="#3E5141"/>
+                <path class="as-wing-l" d="M0 1C-9-7-19-9-26-4" stroke="#3E5141" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+                <path class="as-wing-r" d="M0 1C9-7 19-9 26-4" stroke="#3E5141" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+              </g></g>
+
+              <!-- дальние холмы -->
+              <path d="M0 196Q120 124 250 188T560 168V300H0Z" fill="#CBE0BE"/>
+              <path d="M0 240Q170 168 320 232T560 218V310H0Z" fill="#A3C795"/>
+
+              <!-- долина: берега -->
+              <path d="M0 300C120 284 300 306 560 294V480H0Z" fill="#D9E7CB"/>
+              <path d="M0 380C180 356 380 372 560 366V480H0Z" fill="#C3DAB3"/>
+
+              <!-- лес по берегам -->
+              <g class="as-tree as-tree-1"><g transform="translate(64 280)">
+                <path d="M0-46l19 36h-9l20 34H-30l20-34h-9l19-36Z" fill="#2E7D32"/>
+                <rect x="-3.5" y="24" width="7" height="15" rx="2.5" fill="#6B4F37"/>
+              </g></g>
+              <g class="as-tree as-tree-2"><g transform="translate(118 312)">
+                <path d="M0-34l14 27h-7l15 26H-22l15-26h-7l14-27Z" fill="#3A8A3F"/>
+                <rect x="-2.5" y="19" width="5" height="11" rx="2" fill="#6B4F37"/>
+              </g></g>
+              <g class="as-tree as-tree-3"><g transform="translate(470 292)">
+                <path d="M0-36l15 28h-7l16 27H-24l16-27h-7l15-28Z" fill="#2E7D32"/>
+                <rect x="-3" y="19" width="6" height="11" rx="2" fill="#6B4F37"/>
+              </g></g>
+              <g class="as-tree as-tree-4"><g transform="translate(518 336)">
+                <path d="M0-30l13 25h-7l14 24H-20l14-24h-7l13-25Z" fill="#3A8A3F"/>
+                <rect x="-2.5" y="18" width="5" height="10" rx="2" fill="#6B4F37"/>
+              </g></g>
+              <g fill="#7FA375">
+                <path d="M176 176l10 19h-20l10-19Zm0-12 8 15h-16l8-15Z"/>
+                <path d="M232 188l10 19h-20l10-19Zm0-12 8 15h-16l8-15Z"/>
+                <path d="M458 180l9 17h-18l9-17Zm0-11 7 13h-14l7-13Z"/>
+              </g>
+
+              <!-- река, вьющаяся по центру долины -->
+              <path d="M238 212C226 248 258 274 244 314C232 348 268 376 256 414C247 444 262 470 258 480L362 480C372 452 349 430 360 404C370 372 336 348 352 316C364 278 338 250 348 212Z" fill="url(#about-river)"/>
+              <clippath id="about-river-clip">
+                <path d="M238 212C226 248 258 274 244 314C232 348 268 376 256 414C247 444 262 470 258 480L362 480C372 452 349 430 360 404C370 372 336 348 352 316C364 278 338 250 348 212Z"/>
+              </clippath>
+
+              <!-- течение и рыбки — только внутри реки (clip-path по её контуру) -->
+              <g clip-path="url(#about-river-clip)">
+                <g class="as-flow as-flow-1"><path d="M272 218c-6 74 6 150-2 224" stroke="#EAF4F5" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+                <g class="as-flow as-flow-2"><path d="M296 218c6 74-6 150 2 224" stroke="#E4F1F3" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+                <g class="as-flow as-flow-3"><path d="M322 218c-6 74 6 150-2 224" stroke="#EAF4F5" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+                <g class="as-flow as-flow-4"><path d="M286 218c-6 62 6 136-2 208" stroke="#DFEEF0" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+                <g class="as-flow as-flow-5"><path d="M340 218c6 62-6 136 2 208" stroke="#E4F1F3" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+                <g fill="#DDEFF1">
+                  <circle cx="252" cy="322" r="1.8"/><circle cx="310" cy="362" r="1.4"/><circle cx="336" cy="282" r="1.6"/><circle cx="272" cy="432" r="1.3"/>
+                </g>
+
+                <!-- рыбки плывут по течению (одна — вверх) -->
+                <g class="as-fish as-fish-1"><g transform="translate(268 218)"><g transform="rotate(90)">
+                  <path d="M0 0c-9-7-20-7-29 0 9 7 20 7 29 0Z" fill="#E8974F"/>
+                  <path d="M-29 0l-9-6.5v13l9-6.5Z" fill="#D9793F"/>
+                  <circle cx="-7" cy="-1.5" r="1.4" fill="#5D4037"/>
+                </g></g></g>
+                <g class="as-fish as-fish-2"><g transform="translate(300 218)"><g transform="rotate(90)">
+                  <path d="M0 0c-7-5.5-16-5.5-23 0 7 5.5 16 5.5 23 0Z" fill="#E8844E"/>
+                  <path d="M-23 0l-7-5v10l7-5Z" fill="#CE6F38"/>
+                  <circle cx="-5" cy="-1.2" r="1.1" fill="#5D4037"/>
+                </g></g></g>
+                <g class="as-fish as-fish-3"><g transform="translate(334 218)"><g transform="rotate(90)">
+                  <path d="M0 0c-8-6-18-6-26 0 8 6 18 6 26 0Z" fill="#C9A24B"/>
+                  <path d="M-26 0l-8-6v12l8-6Z" fill="#B08834"/>
+                  <circle cx="-6" cy="-1.4" r="1.2" fill="#5D4037"/>
+                </g></g></g>
+              </g>
+
+              <!-- мост через реку -->
+              <path d="M160 326C226 292 338 292 404 324" stroke="#8A6548" stroke-width="13" fill="none" stroke-linecap="round"/>
+              <path d="M160 326C226 292 338 292 404 324" stroke="#A97F5C" stroke-width="8" fill="none" stroke-linecap="round"/>
+              <path d="M164 305C226 271 338 271 400 303" stroke="#6B4F37" stroke-width="3.5" fill="none"/>
+              <g stroke="#6B4F37" stroke-width="3.5" stroke-linecap="round">
+                <line x1="200" y1="317" x2="200" y2="297"/>
+                <line x1="250" y1="303" x2="250" y2="283"/>
+                <line x1="300" y1="303" x2="300" y2="283"/>
+                <line x1="350" y1="316" x2="350" y2="296"/>
+              </g>
+
+              <!-- семья на мосту: папа показывает на рыбок, мама — на птиц -->
+              <g class="as-family"><g transform="translate(226 296)">
+                <circle cx="0" cy="-30" r="7.5" fill="#8D6E63"/>
+                <path d="M-2-16q-9 2-9 11v3" stroke="#1B5E20" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+                <path d="M0-23v19m0-12-10 7m10-7 10 7m-10 7-7 11m7-11 7 11" stroke="#2E7D32" stroke-width="5" stroke-linecap="round"/>
+                <path d="M8-13q18 0 22 11" stroke="#1B5E20" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+                <circle cx="30" cy="-12" r="5" fill="#8D6E63"/>
+                <path d="M30-7v12m-2-8-6 4m8-4 6 4m-8 3 3 6m4-6-3 6" stroke="#B8860B" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="56" cy="-25" r="6.5" fill="#C48E63"/>
+                <path d="M50-32q7-6 13 0" stroke="#5D4037" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M56-19v14m0-9-8 5m8-5 8 5m-8 4-5 9m5-9 5 9" stroke="#8D6E63" stroke-width="4.5" stroke-linecap="round"/>
+                <path d="M56-14l-9-9" stroke="#8D6E63" stroke-width="4.5" stroke-linecap="round"/>
+              </g></g>
+
+              <!-- падающие листья -->
+              <g class="as-leaf as-leaf-1"><ellipse cx="150" cy="200" rx="5" ry="3" fill="#D9B64C" transform="rotate(24 150 200)"/></g>
+              <g class="as-leaf as-leaf-2"><ellipse cx="252" cy="180" rx="4.5" ry="2.8" fill="#C89A3E" transform="rotate(-18 252 180)"/></g>
+              <g class="as-leaf as-leaf-3"><ellipse cx="332" cy="214" rx="4" ry="2.5" fill="#B9C959" transform="rotate(40 332 214)"/></g>
+
+              <!-- камыш, трава и цветы на берегах -->
+              <g stroke="#7FA375" stroke-width="2.5" stroke-linecap="round">
+                <path d="M44 480q4-16 9-32"/>
+                <path d="M56 482q3-14 7-27"/>
+                <path d="M66 480q5-19 10-36"/>
+                <path d="M496 480q4-16 9-30"/>
+                <path d="M510 482q3-14 7-25"/>
+              </g>
+              <ellipse cx="52" cy="448" rx="2.6" ry="8" fill="#6F5138"/>
+              <ellipse cx="62" cy="444" rx="2.4" ry="7" fill="#6F5138"/>
+              <ellipse cx="506" cy="450" rx="2.5" ry="7.5" fill="#6F5138"/>
+              <path d="M120 480q4-13 8 0M196 478q4-11 8 0M440 480q4-12 8 0M536 470q3-10 7-14" stroke="#6FA36A" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <g fill="#F2D06B"><circle cx="18" cy="470" r="3.5"/><circle cx="146" cy="474" r="3"/><circle cx="478" cy="472" r="3.5"/><circle cx="534" cy="468" r="2.8"/></g>
+              <g fill="#DEB06A"><circle cx="40" cy="466" r="2.5"/><circle cx="498" cy="462" r="2.5"/><circle cx="180" cy="478" r="3"/></g>
+            </svg>
+            <figcaption class="about-float">
+              <span class="emoji" aria-hidden="true">🌿</span>
+              <div>Вид с&nbsp;моста<span class="dim">рыбки плывут, птицы летят</span></div>
+            </figcaption>
+          </figure>
+        </div>
+
+        <ul class="about-cards">
+          <li class="about-card reveal">
+            <div class="about-card-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m8.6 12 2.3 2.3 4.4-4.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h3>Безопасность прежде всего</h3><p>Разметка, честные предупреждения о сложных участках и проверенные броды — никаких сюрпризов под ногами.</p></div>
+          </li>
+          <li class="about-card reveal">
+            <div class="about-card-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="16.5" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M2.5 20v-2a5.5 5.5 0 0 1 11 0v2m0-3a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h3>Проверено для всей семьи</h3><p>Сложность оцениваем с поправкой на возраст и опыт: проходимость с коляской, привалы, туалеты и эко-игры по пути.</p></div>
+          </li>
+          <li class="about-card reveal">
+            <div class="about-card-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 2h8l5 5v15H6V2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v5h5M9.5 12.5h5M9.5 16h3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h3>Памятка в PDF</h3><p>Карта, координаты старта и советы — в одном файле. Сохраните в телефон: работает без сети.</p></div>
+          </li>
+          <li class="about-card reveal">
+            <div class="about-card-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21c-5 0-8-3-8-8 0-6 8-10 8-10s8 4 8 10c0 5-3 8-8 8Z" stroke="currentColor" stroke-width="2"/><path d="m9 13.5 2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h3>Бережно к природе</h3><p>Тропы идут по существующим дорожкам. Одно правило: ничего не оставляем, кроме следов.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= МАРШРУТЫ ================= -->
+    <section class="section" id="routes" aria-labelledby="routes-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Популярные маршруты</p>
           <h2 class="section-title" id="routes-title">Куда отправимся в выходные?</h2>
           <p>Мы прошли эти тропы сами: проверили навигацию, отметили смотровые площадки и места для привала. Выбирайте сложность — а карту возьмёте с собой в PDF.</p>
         </div>
